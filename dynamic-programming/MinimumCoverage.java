@@ -1,5 +1,5 @@
 /***
-Given an integer array of size n
+Given an digit array of size n
 Find the minimum number of consecutive elements in the array that 
 contain all the values of that array
 */
