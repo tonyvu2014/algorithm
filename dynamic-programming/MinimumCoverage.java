@@ -1,10 +1,13 @@
 /***
-Given an digit array of size n
+Given an integer array of size n
 Find the minimum number of consecutive elements in the array that 
 contain all the values of that array
 */
 
-import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Set;
+import java.util.HashSet;
 
 public class MinimumCoverage {
 	
@@ -18,33 +21,32 @@ public class MinimumCoverage {
 		
 		int n = a.length;
 		
-		String[][] coverageSet =  new String[n][n];
-		int[][] coverageCount =  new int[n][n];
+		Map<Integer, Set<Integer>> coverageMap =  new HashMap<Integer, Set<Integer>>();
 		
+		Set<Integer> allValues =  new HashSet<Integer>();
 		
 		for (int i = 0; i < n; i++) {
-			coverageSet[i][i] = ""+a[i];
-			coverageCount[i][i] = 0;
+			allValues.add(a[i]);
+			Set<Integer> s = new HashSet<Integer>();
+			s.add(a[i]);
+			coverageMap.put(i*n+i, s);
 		}
 		
-		int maxCoverageCount = 0;
-		int coverageRange = n;
+		int valueCount = allValues.size();
+		int minCoverageRange = n;
 		
-		for (int i=0; i < n-1; i++) {
-			for (int j=i+1; j < n; j++) {
-				coverageSet[i][j] = new String(coverageSet[i][j-1]);
-				coverageCount[i][j] = coverageCount[i][j-1];
-				if (!coverageSet[i][j-1].contains(""+a[j])) {
-					coverageSet[i][j] += a[j];
-					coverageCount[i][j] += 1;
-				}
-				if (coverageCount[i][j] > maxCoverageCount) {
-					maxCoverageCount = coverageCount[i][j];
-					coverageRange = j - i + 1; 
+		for (int i = 0; i < n-1; i++) {
+			for (int j =i + 1; j < n; j++) {
+				Set<Integer> s = new HashSet<Integer>();
+			    s.addAll(coverageMap.get(i*n+j-1));	
+				s.add(a[j]);
+				coverageMap.put(i*n+j, s);
+				if (s.size() == valueCount && j-i+1 < minCoverageRange) {
+					minCoverageRange = j-i+1;
 				}
 			}
 		}	 
 		
-		return coverageRange;
+		return minCoverageRange;
 	}
 }
