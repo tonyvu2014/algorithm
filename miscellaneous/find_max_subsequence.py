@@ -52,8 +52,7 @@ def find_max_subsequences(array):
     
 def find_max_contiguous_sum(array):
     l = len(array)
-    left_indexes = {}
-    right_indexes = {}
+    left_indexes = right_indexes = {}
     found = False
     for i in range(l):
         left_indexes.update({i:False})
@@ -68,8 +67,7 @@ def find_max_contiguous_sum(array):
     if not found:
         return max(array)
         
-    current_sum = -sys.maxint-1
-    max_sum = current_sum
+    max_sum = current_sum = -sys.maxint-1
     for i in range(l):
         if left_indexes.get(i, False):
             if current_sum < 0:
