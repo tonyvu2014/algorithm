@@ -50,6 +50,12 @@ def find_max_subsequences(array):
     return (x, y)
     
     
+def find_max_subsequences_kadane(array):
+    x = find_max_contiguous_sum_kadane(array)
+    y = find_max_non_contiguous_sum(array)
+    return (x, y)
+    
+    
 def find_max_contiguous_sum(array):
     l = len(array)
     left_indexes = right_indexes = {}
@@ -78,7 +84,15 @@ def find_max_contiguous_sum(array):
             if current_sum > max_sum:
                 max_sum = current_sum
                 
-    return max_sum             
+    return max_sum
+					
+					
+def find_max_contiguous_sum_kadane(array):
+    max_ending_here = max_so_far = array[0]
+    for x in array[1:]:
+        max_ending_here = max(x, max_ending_here + x)
+        max_so_far = max(max_ending_here, max_so_far)
+    return max_so_far             								             
             
             
 def find_max_non_contiguous_sum(array):
@@ -101,9 +115,25 @@ def compute_max_subsequence():
    
     for outcome in outcomes:
         print("{} {}".format(outcome[0], outcome[1]))
+
+def compute_max_subsequence_kadane():
+    test_cases = int(input())
+    outcomes = []
+
+    for _ in range(test_cases):
+        n = int(input())
+        line = sys.stdin.readline()
+        array = map(lambda x: int(x), line.split(" "))
+        outcomes.append(find_max_subsequences_kadane(list(array)))
+   
+    for outcome in outcomes:
+        print("{} {}".format(outcome[0], outcome[1]))
    
 
 if __name__ == '__main__':
-    compute_max_subsequence()        
+    compute_max_subsequence()
+    
+    # Solution using Kadane's algorithm
+    compute_max_subsequence_kadane()    
 
     
