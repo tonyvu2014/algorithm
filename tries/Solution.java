@@ -76,10 +76,12 @@ public class Solution {
 		private Character ch;
 		private Map<Character, TrieNode> children;
 		private boolean isLeaf;
+		private int wordCount;
 	
 		public TrieNode(Character ch) {
 			this.ch = ch;
 			this.children = new HashMap<Character, TrieNode>();
+			this.wordCount = 0;
 		}
 	
 		public Character getCh() {
@@ -105,6 +107,14 @@ public class Solution {
 		
 		public boolean getIsLeaf() {
 			return this.isLeaf;
+		}
+		
+		public int getWordCount() {
+			return this.wordCount;
+		}
+		
+		public void setWordCount(int wordCount) {
+			this.wordCount = wordCount;
 		}
 	
 	}
@@ -137,6 +147,7 @@ public class Solution {
 					node = children.get(ch);
 				}
 				children = node.getChildren();
+				node.setWordCount(node.getWordCount()+1);
 				
 				if (i == word.length()-1) {
 					node.setIsLeaf(true);
@@ -156,19 +167,7 @@ public class Solution {
 					children = node.getChildren();
 				}
 			}
-			return countWord(node);
-		}
-		
-		public int countWord(TrieNode node) {
-			int count = 0;
-			if (node.getIsLeaf()) {
-				count++;
-			}
-			for (TrieNode child: node.getChildren().values()) {
-				count += countWord(child);
-			}
-			
-			return count;
+			return node.getWordCount();
 		}
 	}
 	
