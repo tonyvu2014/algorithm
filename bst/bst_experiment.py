@@ -1,5 +1,3 @@
-import random
-
 class BSTNode(object):
     
     def __init__(self, val):
