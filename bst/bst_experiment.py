@@ -39,8 +39,8 @@ class BST(object):
             else:
                  root_node.right = BSTNode(val)
     
-    def search(self, node_value):
-        return BST.__search_in_tree__(self.root, node_value)
+    def search(self, val):
+        return BST.__search_in_tree__(self.root, val)
             
     @staticmethod            
     def __search_in_tree__(root_node, val):
