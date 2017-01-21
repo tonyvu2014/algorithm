@@ -38,8 +38,6 @@ def dijsktra(graph, v):
         vertex = pick_closest_unvisited_vertex(visited_set, distance_from_source)
         adjacent_vertices = graph.adjacent_vertices(vertex)
         for v in adjacent_vertices:
-            if v in visited_set:
-                continue
             if distance_from_source[vertex] + adjacent_vertices[v] < distance_from_source[v]:
                 distance_from_source[v] = distance_from_source[vertex] + adjacent_vertices[v]
         visited_set.add(vertex)   
