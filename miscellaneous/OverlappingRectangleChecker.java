@@ -20,7 +20,7 @@ public class OverlappingRectangleChecker {
     BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
     StringBuilder output = new StringBuilder();
     String s;
-    while (!(s = in.readLine()).equals("")) {
+    while ((s = in.readLine()) != null) {
       String[] inputs = getInputs(s);
       
       Rectangle firstRectangle = getRectangleFromInput(Arrays.copyOfRange(inputs, 0 , 4));
