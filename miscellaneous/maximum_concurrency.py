@@ -8,7 +8,7 @@
 # 132324 232000
 # 249594 383758
 #
-# In this case, there are at most 2 calls at the same time, so the company needs to hire 1 more additional staff.
+# In this case, there are at most 2 calls at the same time, so the company needs to hire 1 more staff
 #
 # print out 0 if no more staff is required 
 
