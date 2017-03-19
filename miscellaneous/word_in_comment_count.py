@@ -21,6 +21,3 @@ for i in range(n):
             
 sorted_product_word_count_map = sorted(product_word_count_map.items(), key=itemgetter(1), reverse=True)
 print " ".join([str(x[0]) for x in sorted_product_word_count_map])
-    
-    
- 

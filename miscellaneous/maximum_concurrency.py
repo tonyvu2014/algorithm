@@ -44,10 +44,3 @@ if max_concurrent_call <= n:
     print "0"
 else:
     print "{}".format(max_concurrent_call-n)    
-   
-    
-    
-
-    
-     
-
