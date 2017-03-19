@@ -2,11 +2,11 @@
 # The next line is the number of comment n on followed by n comments
 # Each comment has a product_id on the line and the comment content on the second line
 # Print out the product id in descending order of the number of words found in the comments
+
 from sys import stdin
 from collections import defaultdict
 from operator import itemgetter
 
- 
 words = set(stdin.readline().split())
 n = int(stdin.readline())
 product_word_count_map = defaultdict(int)
