@@ -1,6 +1,6 @@
 # Given a list of words separated by spaces on the first line
-# The next line is the number of comment n on followed by n comments
-# Each comment has a product_id on the line and the comment content on the second line
+# The next line is the number of comment n which is followed by n comments
+# Each comment has a product_id on the first line and the comment content on the second line
 # Print out the product id in descending order of the number of words found in the comments
 
 from sys import stdin
