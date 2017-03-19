@@ -1,5 +1,7 @@
-# Given the number of current customer service staff n on the first line and the number of data set k on the second line. The next k lines are data. Each line contains 2
-# point of time in EPOCH format separated by a space. The first number represents the start time and the second number represents the end time of a conversation between # a staff and a customer.
+# Given the number of current customer service staff n on the first line and the number of data set k on the second line. 
+# The next k lines are data. Each line contains 2
+# point of time in EPOCH format separated by a space. The first number represents the start time and the second number represents 
+# the end time of a conversation between a staff and a customer.
 # Find out how many more customer service staff the company needs to hire to ensure that every customer is served.
 # Example input:
 # 1
@@ -10,7 +12,7 @@
 #
 # In this case, there are at most 2 calls at the same time, so the company needs to hire 1 more staff
 #
-# print out 0 if no more staff is required 
+# Print out 0 if no more staff is required 
 
 from sys import stdin
 from collections import defaultdict
