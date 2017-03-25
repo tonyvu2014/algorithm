@@ -7,7 +7,7 @@ from sys import stdin
 from collections import defaultdict
 from operator import itemgetter
 
-words = set(stdin.readline().split())
+words = set(map(lambda x: x.lower(), stdin.readline().split()))
 n = int(stdin.readline())
 product_word_count_map = defaultdict(int)
 for i in range(n):
@@ -15,9 +15,8 @@ for i in range(n):
     comment = stdin.readline()
     comment_words = comment.split()
     comment_words_lowercase = map(lambda x: x.lower(), comment_words)
-    for word in words:
-        if word.lower() in comment_words_lowercase:
-            product_word_count_map[product_id] += 1
+    comment_words = filter(lambda w: w in comment_words_lowercase, words)
+    product_word_count_map[product_id] += len(comment_words)
             
 sorted_product_word_count_map = sorted(product_word_count_map.items(), key=itemgetter(1), reverse=True)
 print " ".join([str(x[0]) for x in sorted_product_word_count_map])
