@@ -1,5 +1,5 @@
 """
-Given an array of size n and a integer k
+Given an array of size n and an integer k
 Find the minimum sum of k consecutive numbers from the array
 """
 
