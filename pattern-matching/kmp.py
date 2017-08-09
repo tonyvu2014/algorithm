@@ -1,5 +1,5 @@
 """
-KMP algorithm to find the first index in a string that matches a pattern
+KMP algorithm to find the index of the first substring in a string that matches a pattern
 """
 
 def build_partial_match_table(pattern):
