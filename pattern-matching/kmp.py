@@ -15,40 +15,33 @@ def build_partial_match_table(pattern):
     return partial_match
 
 
-def get_mismatch(target, pattern, index):
-    m = len(pattern)
-    for i in range(m):
-        if target[index + i] != pattern[i]:
-            return i
-
-    return -1
-
 def find_match(target, pattern):
     n = len(target)
     m = len(pattern)
     if m > n:
         return -1
 
-    first_match = target[:m]
-    if first_match == pattern:
-        return 0
-
-    index = 1
+    target_index = 0
+    pattern_index = 0
     partial_match = build_partial_match_table(pattern)
-    while index + m <= n:
-        mismatch_index = get_mismatch(target, pattern, index)
-        if mismatch_index == -1:
-            return index
-        if mismatch_index == 0:
-            index = index + 1 
+    while target_index + m <= n:
+        if target[target_index + pattern_index] == pattern[pattern_index]:
+            pattern_index += 1
+            if pattern_index == m:
+                return target_index
         else:
-            index = index + m - partial_match[mismatch_index-1] - 1
+            if pattern_index == 0:
+                target_index += 1
+                pattern_index = 0
+            else:
+                target_index += pattern_index - partial_match[pattern_index-1] 
+                pattern_index = partial_match[pattern_index]
     
     return -1
 
 
 if __name__ == '__main__':
     print(find_match('abcdabebd', 'abe'))
-    print(find_match('andgssdauhd', 'ss'))
+    print(find_match('andgefssdauhd', 'ss'))
 
 
