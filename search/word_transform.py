@@ -3,7 +3,7 @@
 # A list of pair of valid word separated by space follows in each line and also ends with *. 
 # Return the shortest sequence of transformation to transform the first word to the second one. 
 # In a valid transformation, a character in the word is replaced by another lowercase alphabetical character.
-# sssPrint out 0 if it is not possible to transform the first word to the second word.
+# Print out 0 if it is not possible to transform the first word to the second word.
 #
 # Example: 
 # Input: 
