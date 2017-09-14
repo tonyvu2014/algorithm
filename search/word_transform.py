@@ -66,13 +66,13 @@ def get_sequence(dictionary, pair):
     second_word = pair[1]
 
     if first_word not in dictionary:
-        return 0
+        return []
 
     if second_word not in dictionary:
-        return 0
+        return []
 
     if len(first_word) != len(second_word):
-        return 0
+        return []
 
     previous_words = {first_word: None}
     result = False
