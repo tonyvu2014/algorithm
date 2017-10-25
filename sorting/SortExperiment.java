@@ -13,7 +13,6 @@ public class SortExperiment {
 			array[i] = random.nextInt(max_value-min_value+1) + min_value;
 		}
 		
-		
 		int[] array1 = Arrays.copyOf(array, array.length);
 		SortAlgorithm sortAlgorithm = new SortAlgorithm(new QuickSort());
 		long startTime = System.currentTimeMillis();
@@ -48,6 +47,13 @@ public class SortExperiment {
 		sortAlgorithm.sort(array5);
 		endTime = System.currentTimeMillis();
 		System.out.println("Running BubbleSort in: " + (endTime-startTime) + " ms");
+
+		int[] array6 = Arrays.copyOf(array, array.length);
+		sortAlgorithm = new SortAlgorithm(new MergeSort());
+		startTime = System.currentTimeMillis();
+		sortAlgorithm.sort(array6);
+		endTime = System.currentTimeMillis();
+		System.out.println("Running MergeSort in: " + (endTime-startTime) + " ms");
 
 	}
 	
