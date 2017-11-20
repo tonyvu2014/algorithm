@@ -121,7 +121,7 @@ class Rectangle {
       
       //Check if this rectangle has one of the 4 vertices inside another rectangle
       public boolean hasVerticesInside(Rectangle anotherRectangle) {
-          return anotherRectangle.isPointInside(getLowerLeft()) || anotherRectangle.isPointInside(getLowerRight())              || anotherRectangle.isPointInside(getUpperLeft()) || anotherRectangle.isPointInside(getUpperRight());
+          return anotherRectangle.isPointInside(getLowerLeft()) || anotherRectangle.isPointInside(getLowerRight()) || anotherRectangle.isPointInside(getUpperLeft()) || anotherRectangle.isPointInside(getUpperRight());
       }
   }
  

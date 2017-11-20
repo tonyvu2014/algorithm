@@ -93,7 +93,7 @@ def find_max_contiguous_sum_kadane(array):
         max_ending_here = max(x, max_ending_here + x)
         max_so_far = max(max_ending_here, max_so_far)
     return max_so_far             								             
-            
+                       
             
 def find_max_non_contiguous_sum(array):
     max_sum = 0
@@ -135,5 +135,3 @@ if __name__ == '__main__':
     
     # Solution using Kadane's algorithm
     compute_max_subsequence_kadane()    
-
-    
