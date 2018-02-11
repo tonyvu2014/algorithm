@@ -1,2 +1,2 @@
 # algorithm
-Implementation of basic algorithms
+Using algorithms to solve problems
