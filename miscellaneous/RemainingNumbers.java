@@ -20,10 +20,10 @@ public class RemainingNumbers {
 	private static final Integer[] a = new Integer[]{3,3,7,5};
 	
 	public static void main(String[] args) {
-		System.out.println(countRemainngNumbers(100, a));
+		System.out.println(countRemainingNumbers(100, a));
 	}
 	
-	static int countRemainngNumbers(int n, Integer[] a) {
+	static int countRemainingNumbers(int n, Integer[] a) {
         Set<Integer> cleanSet = new TreeSet<>();
         for (int e: a) {
             cleanSet.add(e);

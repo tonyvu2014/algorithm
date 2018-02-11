@@ -19,7 +19,7 @@ public class SearchExperiment {
 		breadthFirstSearch(adjacentMatrix, 0); 	
       
 		long endTime = System.currentTimeMillis();
-		System.out.println("Running Beadth First Search in: " + (endTime-startTime) + " ms");
+		System.out.println("Running Breadth First Search in: " + (endTime-startTime) + " ms");
 		
 		System.out.println();
 		
